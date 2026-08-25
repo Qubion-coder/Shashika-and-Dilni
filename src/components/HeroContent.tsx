@@ -62,16 +62,18 @@ export const HeroContent: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
         >
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display text-white drop-shadow-xl leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
-            Sashika
+            Shashika
           </h1>
-          
-          <div className="my-1 sm:my-3 text-white opacity-90 drop-shadow-lg">
-             <span className="text-4xl sm:text-5xl font-serif italic">&amp;</span>
+
+          <div className="flex items-center space-x-4 px-4 w-full justify-center">
+            <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-white/60"></div>
+            <span className="font-serif text-2xl sm:text-3xl text-white/90 italic drop-shadow-sm px-2">&amp;</span>
+            <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-white/60"></div>
           </div>
 
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-display text-white drop-shadow-xl leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
-            Dilini
-          </h1>
+          <p className="font-display text-5xl sm:text-7xl md:text-8xl text-white drop-shadow-xl font-bold tracking-wide" style={{ fontFamily: "'Great Vibes', cursive", padding: '10px 0' }}>
+            Dilni
+          </p>
           
           <p className="text-sm sm:text-lg md:text-xl font-sans tracking-[0.1em] sm:tracking-[0.15em] text-white uppercase mt-12 sm:mt-16 drop-shadow-md">
             Thursday, October 22, 2026

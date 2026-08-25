@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 text-white/70 font-sans tracking-[0.1em] text-sm">
               <p>22nd October 2026</p>
               <p>SKYLOFT - KANDY</p>
-              <p className="text-white italic mt-4 font-serif tracking-widest text-xs opacity-80">#Sashika&amp;Dilini2026</p>
+              <p className="text-white italic mt-4 font-serif tracking-widest text-xs opacity-80">#Shashika&amp;Dilni2026</p>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
             <div className="w-8 h-[1px] bg-gradient-to-l from-transparent to-white/50"></div>
           </div>
           <p className="text-white/70 text-[10px] md:text-xs font-sans tracking-[0.2em] uppercase">
-            © 2026 Sashika &amp; Dilini's Wedding
+            © 2026 Shashika &amp; Dilni's Wedding
           </p>
           <p className="text-white/40 text-[10px] mt-4 font-sans tracking-[0.1em]">
             Want a beautiful wedding website like this? Create yours with <a target="_blank" rel="noreferrer" className="text-white hover:text-white/80 transition-colors underline underline-offset-2" href="https://wa.me/94707819074">invitemint</a>

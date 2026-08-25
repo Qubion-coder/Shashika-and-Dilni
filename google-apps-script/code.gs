@@ -1,4 +1,4 @@
-const SPREADSHEET_ID = '1IMV3FN0jZZk3CFWPG0H1kYensNHLc_Y4PzqpL67qVdc';
+const SPREADSHEET_ID = '1t8pRIO-aBlyKBqQOzOQTN0jSVfoEaiC8yMBQOzXjsXY';
 const SHEET_NAMES = {
   rsvp: 'RSVP',
   wishes: 'Wishes',
@@ -6,27 +6,35 @@ const SHEET_NAMES = {
 
 function doPost(e) {
   try {
-    const sheetKey = ((e && e.parameter && e.parameter.sheet) || '').toLowerCase();
     const payloadJson = (e && e.parameter && e.parameter.payload) || '{}';
-
-    if (!SHEET_NAMES[sheetKey]) {
-      return jsonResponse({ ok: false, error: 'Invalid sheet name. Use rsvp or wishes.' });
-    }
-
     const payload = JSON.parse(payloadJson);
     const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheetName = SHEET_NAMES[sheetKey];
     
-    // Auto-create the sheet if it doesn't exist
-    const sheet = spreadsheet.getSheetByName(sheetName) || spreadsheet.insertSheet(sheetName);
-
-    // Auto-create headers if the sheet is empty
-    ensureHeaders(sheetKey, sheet);
+    let processed = false;
     
-    // Append the new response row
-    sheet.appendRow(buildRow(sheetKey, payload));
+    // Auto-create sheets if they don't exist
+    const rsvpSheet = spreadsheet.getSheetByName(SHEET_NAMES.rsvp) || spreadsheet.insertSheet(SHEET_NAMES.rsvp);
+    const wishesSheet = spreadsheet.getSheetByName(SHEET_NAMES.wishes) || spreadsheet.insertSheet(SHEET_NAMES.wishes);
 
-    return jsonResponse({ ok: true, sheet: sheetName });
+    // Process RSVP (if attending status is provided)
+    if (payload.status) {
+      ensureHeaders('rsvp', rsvpSheet);
+      rsvpSheet.appendRow(buildRow('rsvp', payload));
+      processed = true;
+    }
+    
+    // Process Wishes (if a message was typed)
+    if (payload.message && payload.message.trim() !== '') {
+      ensureHeaders('wishes', wishesSheet);
+      wishesSheet.appendRow(buildRow('wishes', payload));
+      processed = true;
+    }
+
+    if (!processed) {
+       return jsonResponse({ ok: false, error: 'No valid RSVP or message data provided.' });
+    }
+
+    return jsonResponse({ ok: true, message: 'Processed successfully' });
   } catch (error) {
     return jsonResponse({
       ok: false,
@@ -36,13 +44,7 @@ function doPost(e) {
 }
 
 function doGet(e) {
-  const action = ((e && e.parameter && e.parameter.action) || '').toLowerCase();
-
-  if (action === 'health') {
-    return jsonResponse({ ok: true, service: 'wedding-forms', timestamp: new Date().toISOString() });
-  }
-
-  return jsonResponse({ ok: true, message: 'Use POST with sheet=rsvp or sheet=wishes and payload=<json>' });
+  return jsonResponse({ ok: true, service: 'wedding-forms', timestamp: new Date().toISOString() });
 }
 
 function ensureHeaders(sheetKey, sheet) {
@@ -81,7 +83,7 @@ function buildRow(sheetKey, payload) {
     return [
       now,
       sanitize(payload.name),
-      sanitize(payload.wish),
+      sanitize(payload.message),
       sanitize(payload.submittedAt),
     ];
   }
@@ -101,4 +103,3 @@ function jsonResponse(data) {
     .createTextOutput(JSON.stringify(data))
     .setMimeType(ContentService.MimeType.JSON);
 }
-

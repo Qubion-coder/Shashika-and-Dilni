@@ -60,7 +60,7 @@ export const HomecomingDetails: React.FC = () => {
           <a 
             target="_blank" 
             rel="noreferrer"
-            href="https://maps.google.com/?q=SKYLOFT+KANDY"
+            href="https://maps.app.goo.gl/jfpfkd7rhZu8o38z7"
             className="group relative inline-flex items-center justify-center space-x-3 px-10 py-4 overflow-hidden rounded-full border border-white bg-transparent transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
           >
             <span className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>

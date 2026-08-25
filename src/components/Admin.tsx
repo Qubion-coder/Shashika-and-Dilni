@@ -13,7 +13,7 @@ export const Admin: React.FC = () => {
     ? `${baseUrl}?prefix=${encodeURIComponent(prefix)}&name=${encodeURIComponent(guestName.trim())}`
     : baseUrl;
 
-  const generatedMessage = `Dear ${prefix} ${guestName.trim()} ❤️\n\nWith joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Imalsha & Isuru`;
+  const generatedMessage = `Dear ${prefix} ${guestName.trim()} ❤️\n\nWith joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Sashika & Dilini`;
 
   const handleCopyLink = async () => {
     try {
@@ -51,12 +51,9 @@ export const Admin: React.FC = () => {
               >
                 <option value="Mr.">Mr.</option>
                 <option value="Mrs.">Mrs.</option>
-                <option value="Miss">Miss</option>
                 <option value="Mr. & Mrs.">Mr. & Mrs.</option>
                 <option value="Family">Family</option>
                 <option value="Dear">Dear</option>
-                <option value="Dr.">Dr.</option>
-                <option value="Prof.">Prof.</option>
               </select>
             </div>
 

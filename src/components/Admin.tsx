@@ -13,7 +13,7 @@ export const Admin: React.FC = () => {
     ? `${baseUrl}?prefix=${encodeURIComponent(prefix)}&name=${encodeURIComponent(guestName.trim())}`
     : baseUrl;
 
-  const generatedMessage = `Dear ${prefix} ${guestName.trim()} ❤️\n\nWith joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Shashika & Dilni`;
+  const generatedMessage = `Dear ${prefix} ${guestName.trim()} ❤️\n\nWith joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Sashika & Dilni`;
 
   const handleCopyLink = async () => {
     try {

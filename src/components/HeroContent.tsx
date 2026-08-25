@@ -62,7 +62,7 @@ export const HeroContent: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
         >
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display text-white drop-shadow-xl leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
-            Shashika
+            Sashika
           </h1>
 
           <div className="flex items-center space-x-4 px-4 w-full justify-center">

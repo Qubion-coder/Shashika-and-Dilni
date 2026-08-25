@@ -51,7 +51,7 @@ export const HappyCouple: React.FC = () => {
           >
             <div className="w-[55%] sm:w-1/2 md:w-5/12 flex flex-col items-center text-center space-y-3 md:space-y-4">
               <h3 className="text-xl sm:text-3xl md:text-4xl font-serif text-white font-semibold leading-snug drop-shadow-md uppercase tracking-wider">
-                SHASHIKA
+                SASHIKA
               </h3>
               <div className="flex items-center justify-center space-x-2 w-full px-2">
                 <div className="h-[1px] bg-white/40 flex-1" />

@@ -57,9 +57,9 @@ export const NoteFromUs: React.FC = () => {
               <p className="text-white/60 font-sans tracking-[0.3em] uppercase text-[10px] md:text-xs">
                 With love always
               </p>
-              <p className="font-display text-[#D4AF37] text-4xl md:text-5xl drop-shadow-sm" style={{ fontFamily: "'Great Vibes', cursive" }}>
-                Shalani &amp; Thenuka
-              </p>
+              <h3 className="text-3xl md:text-5xl font-display text-[#D4AF37] drop-shadow-md" style={{ fontFamily: "'Great Vibes', cursive" }}>
+                Sashika &amp; Dilni
+              </h3>
             </div>
           </div>
         </motion.div>

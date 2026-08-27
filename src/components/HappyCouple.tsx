@@ -28,7 +28,7 @@ export const HappyCouple: React.FC = () => {
           <h2 className="text-6xl sm:text-7xl md:text-8xl font-display text-[#D4AF37] leading-tight drop-shadow-lg" style={{ fontFamily: "'Great Vibes', cursive" }}>
             The Happy<br />Couple
           </h2>
-          <div className="text-black/90 text-base sm:text-xl md:text-2xl font-serif tracking-wide px-4 font-medium drop-shadow-md max-w-lg mx-auto leading-relaxed mt-4">
+          <div className="text-white/90 text-base sm:text-xl md:text-2xl font-serif tracking-wide px-4 font-medium drop-shadow-md max-w-lg mx-auto leading-relaxed mt-4">
             What began as a moment<br />became our forever
           </div>
           <div className="flex items-center justify-center space-x-3 text-black/80 opacity-90 mt-4">
